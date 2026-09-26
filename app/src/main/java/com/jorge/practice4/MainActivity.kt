@@ -7,8 +7,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.rememberNavController
+import com.jorge.practice4.navigation.NavigationHost
+import com.jorge.practice4.navigation.NavigationRoute
 import com.jorge.practice4.ui.theme.Practice4Theme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,9 +27,12 @@ class MainActivity : ComponentActivity() {
 
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
-                    Text(
-                        text = "Hello Android!",
-                        modifier = Modifier.padding(innerPadding)
+                    val navController = rememberNavController()
+
+                    NavigationHost(
+                        modifier = Modifier.padding(innerPadding),
+                        startDestination = NavigationRoute.Home.route,
+                        navController = navController
                     )
 
                 }
