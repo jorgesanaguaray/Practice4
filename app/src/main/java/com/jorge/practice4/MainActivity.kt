@@ -10,7 +10,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.jorge.practice4.navigation.NavigationHost
-import com.jorge.practice4.navigation.NavigationRoute
 import com.jorge.practice4.ui.theme.Practice4Theme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,7 +30,6 @@ class MainActivity : ComponentActivity() {
 
                     NavigationHost(
                         modifier = Modifier.padding(innerPadding),
-                        startDestination = NavigationRoute.Home.route,
                         navController = navController
                     )
 

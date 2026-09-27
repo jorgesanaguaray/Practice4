@@ -1,9 +1,13 @@
 package com.jorge.practice4.navigation
 
-sealed class NavigationRoute(val route: String) {
+import kotlinx.serialization.Serializable
 
-    data object Home : NavigationRoute("home")
-    data object Search : NavigationRoute("search")
-    data object Detail : NavigationRoute("detail")
+sealed interface NavigationRoute {
+
+    @Serializable
+    data object Home : NavigationRoute
+
+    @Serializable
+    data class Detail(val gameId: Int) : NavigationRoute
 
 }

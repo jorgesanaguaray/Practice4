@@ -2,6 +2,7 @@ plugins {
 
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
@@ -83,6 +84,12 @@ dependencies {
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.7.0")
+
+    // Kotlinx Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
